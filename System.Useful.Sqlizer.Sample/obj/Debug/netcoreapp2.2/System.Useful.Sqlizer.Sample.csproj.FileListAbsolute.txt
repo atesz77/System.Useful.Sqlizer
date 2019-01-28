@@ -1,0 +1,14 @@
+D:\x\mylibs\System.Useful.Sqlizer\System.Useful.Sqlizer.Sample\bin\Debug\netcoreapp2.2\System.Useful.Sqlizer.Sample.deps.json
+D:\x\mylibs\System.Useful.Sqlizer\System.Useful.Sqlizer.Sample\bin\Debug\netcoreapp2.2\System.Useful.Sqlizer.Sample.runtimeconfig.json
+D:\x\mylibs\System.Useful.Sqlizer\System.Useful.Sqlizer.Sample\bin\Debug\netcoreapp2.2\System.Useful.Sqlizer.Sample.runtimeconfig.dev.json
+D:\x\mylibs\System.Useful.Sqlizer\System.Useful.Sqlizer.Sample\bin\Debug\netcoreapp2.2\System.Useful.Sqlizer.Sample.dll
+D:\x\mylibs\System.Useful.Sqlizer\System.Useful.Sqlizer.Sample\bin\Debug\netcoreapp2.2\System.Useful.Sqlizer.Sample.pdb
+D:\x\mylibs\System.Useful.Sqlizer\System.Useful.Sqlizer.Sample\bin\Debug\netcoreapp2.2\System.Useful.Sqlizer.dll
+D:\x\mylibs\System.Useful.Sqlizer\System.Useful.Sqlizer.Sample\bin\Debug\netcoreapp2.2\System.Useful.Sqlizer.pdb
+D:\x\mylibs\System.Useful.Sqlizer\System.Useful.Sqlizer.Sample\obj\Debug\netcoreapp2.2\System.Useful.Sqlizer.Sample.csprojAssemblyReference.cache
+D:\x\mylibs\System.Useful.Sqlizer\System.Useful.Sqlizer.Sample\obj\Debug\netcoreapp2.2\System.Useful.Sqlizer.Sample.csproj.CoreCompileInputs.cache
+D:\x\mylibs\System.Useful.Sqlizer\System.Useful.Sqlizer.Sample\obj\Debug\netcoreapp2.2\System.Useful.Sqlizer.Sample.AssemblyInfoInputs.cache
+D:\x\mylibs\System.Useful.Sqlizer\System.Useful.Sqlizer.Sample\obj\Debug\netcoreapp2.2\System.Useful.Sqlizer.Sample.AssemblyInfo.cs
+D:\x\mylibs\System.Useful.Sqlizer\System.Useful.Sqlizer.Sample\obj\Debug\netcoreapp2.2\System.Useful.Sqlizer.Sample.csproj.CopyComplete
+D:\x\mylibs\System.Useful.Sqlizer\System.Useful.Sqlizer.Sample\obj\Debug\netcoreapp2.2\System.Useful.Sqlizer.Sample.dll
+D:\x\mylibs\System.Useful.Sqlizer\System.Useful.Sqlizer.Sample\obj\Debug\netcoreapp2.2\System.Useful.Sqlizer.Sample.pdb

@@ -1,0 +1,9 @@
+﻿TABLE Person
+string Name
+int Age
+
+NAMESPACE Rendszer
+
+TABLE Rendszer.Email
+string Address
+DateTime? DeletedAt
