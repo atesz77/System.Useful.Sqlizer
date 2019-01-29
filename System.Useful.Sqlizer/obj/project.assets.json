@@ -185,11 +185,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\x\\mylibs\\System.Useful.Sqlizer\\System.Useful.Sqlizer\\System.Useful.Sqlizer.csproj",
-      "projectName": "System.Useful.Sqlizer",
-      "projectPath": "D:\\x\\mylibs\\System.Useful.Sqlizer\\System.Useful.Sqlizer\\System.Useful.Sqlizer.csproj",
+      "projectUniqueName": "D:\\github\\System.Useful.Sqlizer\\System.Useful.Sqlizer\\System.Useful.Sqlizer.csproj",
+      "projectName": "Useful.System.Sqlizer",
+      "projectPath": "D:\\github\\System.Useful.Sqlizer\\System.Useful.Sqlizer\\System.Useful.Sqlizer.csproj",
       "packagesPath": "C:\\Users\\horaka\\.nuget\\packages\\",
-      "outputPath": "D:\\x\\mylibs\\System.Useful.Sqlizer\\System.Useful.Sqlizer\\obj\\",
+      "outputPath": "D:\\github\\System.Useful.Sqlizer\\System.Useful.Sqlizer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

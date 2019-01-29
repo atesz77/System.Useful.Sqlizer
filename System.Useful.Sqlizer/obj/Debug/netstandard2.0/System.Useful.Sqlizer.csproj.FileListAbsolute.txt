@@ -7,3 +7,12 @@ D:\x\mylibs\System.Useful.Sqlizer\System.Useful.Sqlizer\obj\Debug\netstandard2.0
 D:\x\mylibs\System.Useful.Sqlizer\System.Useful.Sqlizer\obj\Debug\netstandard2.0\System.Useful.Sqlizer.AssemblyInfo.cs
 D:\x\mylibs\System.Useful.Sqlizer\System.Useful.Sqlizer\obj\Debug\netstandard2.0\System.Useful.Sqlizer.dll
 D:\x\mylibs\System.Useful.Sqlizer\System.Useful.Sqlizer\obj\Debug\netstandard2.0\System.Useful.Sqlizer.pdb
+D:\github\System.Useful.Sqlizer\System.Useful.Sqlizer\bin\Debug\netstandard2.0\System.Useful.Sqlizer.deps.json
+D:\github\System.Useful.Sqlizer\System.Useful.Sqlizer\bin\Debug\netstandard2.0\System.Useful.Sqlizer.dll
+D:\github\System.Useful.Sqlizer\System.Useful.Sqlizer\bin\Debug\netstandard2.0\System.Useful.Sqlizer.pdb
+D:\github\System.Useful.Sqlizer\System.Useful.Sqlizer\obj\Debug\netstandard2.0\System.Useful.Sqlizer.csprojAssemblyReference.cache
+D:\github\System.Useful.Sqlizer\System.Useful.Sqlizer\obj\Debug\netstandard2.0\System.Useful.Sqlizer.csproj.CoreCompileInputs.cache
+D:\github\System.Useful.Sqlizer\System.Useful.Sqlizer\obj\Debug\netstandard2.0\System.Useful.Sqlizer.AssemblyInfoInputs.cache
+D:\github\System.Useful.Sqlizer\System.Useful.Sqlizer\obj\Debug\netstandard2.0\System.Useful.Sqlizer.AssemblyInfo.cs
+D:\github\System.Useful.Sqlizer\System.Useful.Sqlizer\obj\Debug\netstandard2.0\System.Useful.Sqlizer.dll
+D:\github\System.Useful.Sqlizer\System.Useful.Sqlizer\obj\Debug\netstandard2.0\System.Useful.Sqlizer.pdb
