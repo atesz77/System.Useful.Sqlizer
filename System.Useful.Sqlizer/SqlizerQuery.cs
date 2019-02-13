@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Useful.Sqlizer.Builders;
 
 namespace System.Useful.Sqlizer
 {
@@ -36,6 +37,11 @@ namespace System.Useful.Sqlizer
         public static SqlizerQueryBuilder SELECT(string condition)
         {
             return new SqlizerQueryBuilder().WHERE(condition);
+        }
+
+        public static SqlizerCaseWhenBuilder CASE()
+        {
+            return new SqlizerCaseWhenBuilder();
         }
 
         public static string SCOPE(params string[] queries)

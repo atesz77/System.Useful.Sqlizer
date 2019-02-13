@@ -19,7 +19,13 @@ namespace System.Useful.Sqlizer.Sample
 
             var query2 = SELECT(c.Address).FROM(a, SELECT().FROM(a, b, c).AS("x"), "Valami.Asd c");
 
-            var query3 = SELECT(a.ALL(), ISNULL(c.Address, "asd@asd.hu".II()))
+            var query3 = 
+                 SELECT(a.ALL(), ISNULL(c.Address, "asd@asd.hu".II()),
+                    CASE()
+                    .WHEN(EQUALS(a.Age, b.Age), "1")
+                    .WHEN(NOT_EQUALS(a.Age, b.Age), "0", "-1")
+                    .AS("Medve")
+                 )
                 .FROM(a, c)
                 .JOIN(b, EQUALS(a.Age, b.Age))
                 .LEFT_JOIN(c, EQUALS(c.Address, a.Name))
