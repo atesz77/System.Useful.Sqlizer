@@ -15,7 +15,7 @@ namespace System.Useful.Sqlizer.Sample
 
             var name = new SqlizerParameter("name");
 
-            var query = SELECT(a.Age, b.Age, b.Name.AS("Kutya"), c.DeletedAt).FROM(a, b);
+            var query = SELECT_TOP(1, a.Age, b.Age, b.Name.AS("Kutya"), c.DeletedAt).FROM(a, b);
 
             var query2 = SELECT(c.Address).FROM(a, SELECT().FROM(a, b, c).AS("x"), "Valami.Asd c");
 
@@ -61,6 +61,10 @@ namespace System.Useful.Sqlizer.Sample
                .SET(a.Age, GETDATE())
                .SET(a.Name, "Medve".II());
 
+            var query8 = INSERT_INTO(b)
+               .SELECT_DISTINCT(a.Age, a.Name)
+               .FROM(a);
+
             var query6 = SCOPE(
                 DECLARE(name, NVARCHAR(10)),
                 DECLARE(name, BIT, "1"),
@@ -76,6 +80,9 @@ namespace System.Useful.Sqlizer.Sample
 
             var query7 = UNION(query2, query3);
 
+            var query9 = DELETE_FROM(a)
+                .WHERE(LESS(a.Age, "10"));
+
             Console.WriteLine(query);
             Console.WriteLine();
             Console.WriteLine(query2);
@@ -86,6 +93,10 @@ namespace System.Useful.Sqlizer.Sample
             Console.WriteLine(query4);
             Console.WriteLine();
             Console.WriteLine(query5);
+            Console.WriteLine();
+            Console.WriteLine(query8);
+            Console.WriteLine();
+            Console.WriteLine(query9);
             Console.WriteLine();
             Console.WriteLine("---------------");
             Console.WriteLine(query6);

@@ -15,10 +15,27 @@ namespace System.Useful.Sqlizer
             {
                 StringBuilder sb = new StringBuilder();
 
+                if (!string.IsNullOrWhiteSpace(insertTable))
+                {
+                    sb.Append(Environment.NewLine);
+                    sb.Append($"INSERT INTO {insertTable}");
+                }
+
                 if (selectColumns.Any())
                 {
                     sb.Append(Environment.NewLine);
-                    sb.Append($"SELECT {string.Join(", ", selectColumns)}");
+                    sb.Append($"SELECT ");
+
+                    if (distinct)
+                    {
+                        sb.Append("DISTINCT ");
+                    }
+                    else if (top.HasValue)
+                    {
+                        sb.Append($"TOP {top} ");
+                    }
+
+                    sb.Append(string.Join(", ", selectColumns));
                 }
 
                 if (!string.IsNullOrWhiteSpace(updateTable))
@@ -27,10 +44,10 @@ namespace System.Useful.Sqlizer
                     sb.Append($"UPDATE {updateTable}");
                 }
 
-                if (!string.IsNullOrWhiteSpace(insertTable))
+                if (!string.IsNullOrWhiteSpace(deleteTable))
                 {
                     sb.Append(Environment.NewLine);
-                    sb.Append($"INSERT INTO {updateTable}");
+                    sb.Append($"DELETE FROM {deleteTable}");
                 }
 
                 if (setColumns.Any())
@@ -103,8 +120,11 @@ namespace System.Useful.Sqlizer
         private List<string> fromTables = new List<string>();
         private List<(string table, string condition, string spec)> joinTables = new List<(string table, string condition, string spec)>();
         private string updateTable = string.Empty;
+        private string deleteTable = string.Empty;
         private string insertTable = string.Empty;
         private List<string> selectColumns = new List<string>();
+        private bool distinct = false;
+        private int? top = null;
         private List<(string col, string value)> setColumns = new List<(string col, string value)>();
         private List<string> groupByColumns = new List<string>();
         private List<string> orderByColumns = new List<string>();
@@ -124,6 +144,33 @@ namespace System.Useful.Sqlizer
 
         public SqlizerQueryBuilder SELECT(params string[] columns)
         {
+            select(false, null, columns);
+            return this;
+        }
+
+        public SqlizerQueryBuilder SELECT_DISTINCT(params string[] columns)
+        {
+            select(true, null, columns);
+            return this;
+        }
+
+        public SqlizerQueryBuilder SELECT_TOP(int top, params string[] columns)
+        {
+            select(false, top, columns);
+            return this;
+        }
+
+        //public SqlizerQueryBuilder SELECT_DISTINCT_TOP(int top, params string[] columns)
+        //{
+        //    select(true, top, columns);
+        //    return this;
+        //}
+
+        private void select(bool distinct, int? top, params string[] columns)
+        {
+            this.distinct = distinct;
+            this.top = top;
+
             if (columns == null || !columns.Any())
             {
                 this.selectColumns.Add("*");
@@ -132,12 +179,17 @@ namespace System.Useful.Sqlizer
             {
                 this.selectColumns.AddRange(columns);
             }
-            return this;
         }
 
         public SqlizerQueryBuilder UPDATE(string table)
         {
             this.updateTable = table;
+            return this;
+        }
+
+        public SqlizerQueryBuilder DELETE_FROM(string table)
+        {
+            this.deleteTable = table;
             return this;
         }
 

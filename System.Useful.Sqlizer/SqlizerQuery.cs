@@ -19,6 +19,11 @@ namespace System.Useful.Sqlizer
             return new SqlizerQueryBuilder().UPDATE(table);
         }
 
+        public static SqlizerQueryBuilder DELETE_FROM(string table)
+        {
+            return new SqlizerQueryBuilder().DELETE_FROM(table);
+        }
+
         public static SqlizerQueryBuilder INSERT_INTO(string table)
         {
             return new SqlizerQueryBuilder().INSERT_INTO(table);
@@ -34,7 +39,17 @@ namespace System.Useful.Sqlizer
             return new SqlizerQueryBuilder().SELECT(columns);
         }
 
-        public static SqlizerQueryBuilder SELECT(string condition)
+        public static SqlizerQueryBuilder SELECT_DISTINCT(params string[] columns)
+        {
+            return new SqlizerQueryBuilder().SELECT_DISTINCT(columns);
+        }
+
+        public static SqlizerQueryBuilder SELECT_TOP(int top, params string[] columns)
+        {
+            return new SqlizerQueryBuilder().SELECT_TOP(top, columns);
+        }
+
+        public static SqlizerQueryBuilder WHERE(string condition)
         {
             return new SqlizerQueryBuilder().WHERE(condition);
         }
@@ -60,6 +75,7 @@ namespace System.Useful.Sqlizer
         }
 
         #endregion
+
 
         #region Comparisons
 
@@ -133,6 +149,16 @@ namespace System.Useful.Sqlizer
             return $"{column} NOT IN ({string.Join(", ", notinValues)})";
         }
 
+        public static string DISTINCT(string column)
+        {
+            return $"DISTINCT {column}";
+        }
+
+        public static string BETWEEN(string column, string startValue, string endValue)
+        {
+            return $"{column} BETWEEN {startValue} AND {endValue}";
+        }
+
         #endregion
 
 
@@ -171,6 +197,11 @@ namespace System.Useful.Sqlizer
         public static string SUM(string column)
         {
             return $"SUM({column})";
+        }
+
+        public static string AVG(string column)
+        {
+            return $"AVG({column})";
         }
 
         public static string MIN(string column)
@@ -216,6 +247,8 @@ namespace System.Useful.Sqlizer
         public static string DATETIME => "DATETIME";
         public static string DATE => "DATE";
         public static string TIME => "TIME(7)";
+
+        public static string NULL => "NULL";
 
         #endregion
 

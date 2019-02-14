@@ -30,6 +30,11 @@ namespace System.Useful.Sqlizer
             return $"{Table.AsValue}.{ColumnName} DESC";
         }
 
+        public string DISTINCT()
+        {
+            return $"DISTINCT {Table.AsValue}.{ColumnName}";
+        }
+
         public static implicit operator string(SqlizerColumn<T> column)
         {
             return column.ToString();
