@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>Useful.System.Sqlizer</PackageId>
     <Title>Useful.System.Sqlizer</Title>
-    <PackageVersion>1.0.0</PackageVersion>
+    <PackageVersion>1.1.0</PackageVersion>
     <Authors>Attila Horak</Authors>
     <Description>Useful functions and extension based on NetStandard 2.0, better read of raw SQL-s instead of strings</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
