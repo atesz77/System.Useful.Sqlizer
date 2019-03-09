@@ -54,6 +54,16 @@ namespace System.Useful.Sqlizer
             return new SqlizerQueryBuilder().WHERE(condition);
         }
 
+        public static string ORDERBY(params string[] columns)
+        {
+            return new SqlizerQueryBuilder().ORDERBY(columns);
+        }
+
+        public static string PARTITIONBY(params string[] columns)
+        {
+            return $"PARTITION BY {string.Join(", ", columns)}";
+        }
+
         public static SqlizerCaseWhenBuilder CASE()
         {
             return new SqlizerCaseWhenBuilder();
@@ -189,29 +199,34 @@ namespace System.Useful.Sqlizer
             return $"ISNULL({column}, {value})";
         }
 
-        public static string COUNT(string column)
+        public static SqlizerAggregatedFunctionBuilder COUNT(string column)
         {
-            return $"COUNT({column})";
+            return new SqlizerAggregatedFunctionBuilder("COUNT", column);
         }
 
-        public static string SUM(string column)
+        public static SqlizerAggregatedFunctionBuilder SUM(string column)
         {
-            return $"SUM({column})";
+            return new SqlizerAggregatedFunctionBuilder("SUM", column);
         }
 
-        public static string AVG(string column)
+        public static SqlizerAggregatedFunctionBuilder AVG(string column)
         {
-            return $"AVG({column})";
+            return new SqlizerAggregatedFunctionBuilder("AVG", column);
         }
 
-        public static string MIN(string column)
+        public static SqlizerAggregatedFunctionBuilder MIN(string column)
         {
-            return $"MIN({column})";
+            return new SqlizerAggregatedFunctionBuilder("MIN", column);
         }
 
-        public static string MAX(string column)
+        public static SqlizerAggregatedFunctionBuilder MAX(string column)
         {
-            return $"MAX({column})";
+            return new SqlizerAggregatedFunctionBuilder("MAX", column);
+        }
+
+        public static SqlizerAggregatedFunctionBuilder ROW_NUMBER()
+        {
+            return new SqlizerAggregatedFunctionBuilder("ROW_NUMBER", null);
         }
 
         #endregion
@@ -237,7 +252,7 @@ namespace System.Useful.Sqlizer
         #endregion
 
 
-        #region Types
+        #region Types and ranks
 
         public static string INT => "INT";
         public static string NVARCHAR_MAX => "NVARCHAR(MAX)";
@@ -249,6 +264,16 @@ namespace System.Useful.Sqlizer
         public static string TIME => "TIME(7)";
 
         public static string NULL => "NULL";
+
+        public static string ROWS => "ROWS";
+        public static string RANGE => "RANGE";
+        public static string CURRENT_ROW => "CURRENT ROW";
+        public static string UNBOUNDED => "UNBOUNDED";
+
+        public static string FOLLOWING(int count) => $"{count} FOLLOWING";
+        public static string FOLLOWING(string count) => $"{count} FOLLOWING";
+        public static string PRECEDING(int count) => $"{count} PRECEDING";
+        public static string PRECEDING(string count) => $"{count} PRECEDING";
 
         #endregion
 

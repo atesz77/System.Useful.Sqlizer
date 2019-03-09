@@ -15,9 +15,16 @@ namespace System.Useful.Sqlizer.Sample
 
             var name = new SqlizerParameter("name");
 
-            var query = SELECT_TOP(1, a.Age, b.Age, b.Name.AS("Kutya"), c.DeletedAt).FROM(a, b);
+            var query = SELECT(
+                ROW_NUMBER().OVER(PARTITIONBY(a.Age)),
+                AVG(a.Age.DISTINCT()).OVER(
+                    PARTITIONBY(a.Name),
+                    ORDERBY(a.Name, a.Age),
+                    BETWEEN(RANGE, CURRENT_ROW, FOLLOWING(UNBOUNDED))
+                ).AS("medve")
+            );
 
-            var query2 = SELECT(c.Address).FROM(a, SELECT().FROM(a, b, c).AS("x"), "Valami.Asd c");
+            var query2 = SELECT(c.Address, COUNT(c.DeletedAt).AS("darabszám"), COUNT(c.DeletedAt.DISTINCT())).FROM(a, SELECT().FROM(a, b, c).AS("x"), "Valami.Asd c");
 
             var query3 = 
                  SELECT(a.ALL(), ISNULL(c.Address, "asd@asd.hu".II()),
@@ -85,23 +92,23 @@ namespace System.Useful.Sqlizer.Sample
 
             Console.WriteLine(query);
             Console.WriteLine();
-            Console.WriteLine(query2);
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine(query3);
-            Console.WriteLine();
-            Console.WriteLine(query4);
-            Console.WriteLine();
-            Console.WriteLine(query5);
-            Console.WriteLine();
-            Console.WriteLine(query8);
-            Console.WriteLine();
-            Console.WriteLine(query9);
-            Console.WriteLine();
-            Console.WriteLine("---------------");
-            Console.WriteLine(query6);
-            Console.WriteLine("---------------");
-            Console.WriteLine(query7);
+            // Console.WriteLine(query2);
+            // Console.WriteLine();
+            // Console.WriteLine();
+            // Console.WriteLine(query3);
+            // Console.WriteLine();
+            // Console.WriteLine(query4);
+            // Console.WriteLine();
+            // Console.WriteLine(query5);
+            // Console.WriteLine();
+            // Console.WriteLine(query8);
+            // Console.WriteLine();
+            // Console.WriteLine(query9);
+            // Console.WriteLine();
+            // Console.WriteLine("---------------");
+            // Console.WriteLine(query6);
+            // Console.WriteLine("---------------");
+            // Console.WriteLine(query7);
         }
     }
 }
