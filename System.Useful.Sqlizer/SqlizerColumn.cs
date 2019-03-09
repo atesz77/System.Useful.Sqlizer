@@ -10,7 +10,6 @@ namespace System.Useful.Sqlizer
         internal string ColumnName { get; set; }
         internal string As { get; set; }
 
-
         public SqlizerColumn(SqlizerTable table, string columnName)
         {
             this.Table = table;
